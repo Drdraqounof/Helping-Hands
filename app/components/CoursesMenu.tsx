@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const courses = [
-  { href: "/pricing#cpr-aed", label: "CPR & AED" },
-  { href: "/pricing#first-aid", label: "First Aid" },
-  { href: "/pricing#bls", label: "BLS for Healthcare Providers" },
+  { href: "/courses#cpr-aed", label: "CPR & AED" },
+  { href: "/courses#first-aid", label: "First Aid" },
+  { href: "/courses#bls", label: "BLS for Healthcare Providers" },
 ];
 
 export default function CoursesMenu() {
