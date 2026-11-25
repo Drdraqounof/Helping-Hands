@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import StockPhoto from "../components/StockPhoto";
 import Button from "../components/Button";
 import CtaPanel from "../components/CtaPanel";
 import CourseIcon from "../components/CourseIcon";
@@ -34,15 +34,16 @@ export default function PricingPage() {
             you at our training center in Trenton.
           </p>
         </div>
-        <Image
-          src="/images/hero-instructor.png"
-          alt="Instructor demonstrating chest compressions on a CPR manikin for two students"
-          width={1080}
-          height={802}
-          loading="eager"
-          fetchPriority="high"
+        <StockPhoto
+          query="cpr training class"
+          eager
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="h-auto w-full rounded-md"
+          fallback={{
+            src: "/images/hero-instructor.png",
+            alt: "Instructor demonstrating chest compressions on a CPR manikin for two students",
+            width: 1080,
+            height: 802,
+          }}
         />
       </section>
 
@@ -116,13 +117,15 @@ export default function PricingPage() {
 
       {/* Group / on-site */}
       <section className="mx-auto grid w-full max-w-[1800px] items-center gap-12 px-4 pb-24 sm:px-8 lg:grid-cols-2 lg:px-12">
-        <Image
-          src="/images/about-family.png"
-          alt="Family members wearing gloves practicing CPR on manikins in a living room"
-          width={1080}
-          height={1108}
+        <StockPhoto
+          query="first aid training group"
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="h-auto w-full rounded-md lg:order-none"
+          fallback={{
+            src: "/images/about-family.png",
+            alt: "Family members wearing gloves practicing CPR on manikins in a living room",
+            width: 1080,
+            height: 1108,
+          }}
         />
         <div>
           <h2 className="font-serif text-4xl font-bold leading-[1.1] sm:text-6xl">
