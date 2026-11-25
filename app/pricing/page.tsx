@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import StockPhoto from "../components/StockPhoto";
+import Image from "next/image";
 import Button from "../components/Button";
 import CtaPanel from "../components/CtaPanel";
 import CourseIcon from "../components/CourseIcon";
@@ -34,16 +34,16 @@ export default function PricingPage() {
             you at our training center in Trenton.
           </p>
         </div>
-        <StockPhoto
-          query="cpr training class"
-          eager
+        {/* Stock photo: CC0 public domain via Openverse/rawpixel (no credit required) */}
+        <Image
+          src="/images/stock-cpr-class.webp"
+          alt="Adults practicing chest compressions on CPR manikins during a group class"
+          width={1024}
+          height={681}
+          loading="eager"
+          fetchPriority="high"
           sizes="(min-width: 1024px) 50vw, 100vw"
-          fallback={{
-            src: "/images/hero-instructor.png",
-            alt: "Instructor demonstrating chest compressions on a CPR manikin for two students",
-            width: 1080,
-            height: 802,
-          }}
+          className="h-auto w-full rounded-md"
         />
       </section>
 
@@ -117,15 +117,14 @@ export default function PricingPage() {
 
       {/* Group / on-site */}
       <section className="mx-auto grid w-full max-w-[1800px] items-center gap-12 px-4 pb-24 sm:px-8 lg:grid-cols-2 lg:px-12">
-        <StockPhoto
-          query="first aid training group"
+        {/* Stock photo: CC0 public domain via Openverse/rawpixel (no credit required) */}
+        <Image
+          src="/images/stock-cpr-students.webp"
+          alt="Group of students kneeling on mats practicing CPR on manikins"
+          width={1024}
+          height={681}
           sizes="(min-width: 1024px) 50vw, 100vw"
-          fallback={{
-            src: "/images/about-family.png",
-            alt: "Family members wearing gloves practicing CPR on manikins in a living room",
-            width: 1080,
-            height: 1108,
-          }}
+          className="h-auto w-full rounded-md"
         />
         <div>
           <h2 className="font-serif text-4xl font-bold leading-[1.1] sm:text-6xl">
