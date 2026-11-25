@@ -42,7 +42,7 @@ export default function AdminPage() {
 }
 
 async function Dashboard() {
-  await requireAdmin();
+  const email = await requireAdmin();
 
   return (
     <>
@@ -50,6 +50,7 @@ async function Dashboard() {
         <div>
           <p className="text-lg tracking-wide">ADMIN</p>
           <h1 className="mt-3 font-serif text-5xl font-bold sm:text-6xl">Dashboard</h1>
+          <p className="mt-3 text-lg text-black/60">Signed in as {email}</p>
         </div>
         <form action={logout}>
           <button type="submit" className="rounded-lg border border-black/20 px-6 py-3 text-lg hover:bg-panel">

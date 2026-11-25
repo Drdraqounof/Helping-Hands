@@ -9,6 +9,19 @@ export default function LoginForm() {
   return (
     <form action={formAction} className="mt-10 grid gap-6 rounded-lg bg-white p-8 shadow-sm ring-1 ring-black/5">
       <label className="text-lg font-semibold">
+        Email
+        <input
+          name="email"
+          type="email"
+          required
+          autoComplete="username"
+          defaultValue={state.email}
+          key={state.email}
+          placeholder="you@gmail.com"
+          className="mt-2 w-full rounded-md border border-black/15 bg-white px-4 py-3 text-lg outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20"
+        />
+      </label>
+      <label className="text-lg font-semibold">
         Password
         <input
           name="password"
